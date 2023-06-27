@@ -5,6 +5,19 @@ goland uses the latest version, no changes are required.
 
 Template language has been changed to Chinese.
 
+three steps：
+```shell
+pip3 install -r  requirements.txt
+```
+```shell
+cd find3/server/main
+./main
+```
+```shell
+cd find3/server/ai/src
+python3 server.py
+```
+
 ---
 The following sections are only relevant to python
 
