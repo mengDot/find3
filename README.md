@@ -1,7 +1,10 @@
 # find3
 find adapted to python3.9.
+
 goland uses the latest version, no changes are required.
+
 Template language has been changed to Chinese.
+
 ---
 The following sections are only relevant to python
 
