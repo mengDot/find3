@@ -1,0 +1,8 @@
+*node_modules* linguist-vendored
+*static* linguist-vendored
+*testing* linguist-vendored
+*doc* linguist-vendored
+server/main/testing/learn.sh linguist-vendored
+*scratch* linguist-vendored
+server/main/static/* linguist-vendored
+server/main/scratch/sufee-admin-dashboard/** linguist-vendored

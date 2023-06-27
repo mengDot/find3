@@ -1,0 +1,73 @@
+{{ template "header" . }}
+<!-- Left Panel -->
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>精度分析</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active" style="text-transform:none;">{{ .Family }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content mt-3">
+        {{ with .Message }}
+        <div class="col-sm-12">
+            <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                {{.}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        {{ end }} {{ with .ErrorMessage }}
+        <div class="col-sm-12">
+            <div class="alert  alert-danger alert-dismissible fade show" role="alert">
+                {{.}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        {{ end }}
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="card-title mb-0">关于</h4>
+                        </div>
+                        <div class="col-sm-12">
+                            <p>这些图表显示了前 10 个最重要接入点的每个位置的原始 RSSI 值（X 轴）和概率（Y 轴）。最重要的访问点在整个位置集中具有最大的差异，因此是最有区别的。</p>
+                            <p>如果您看到两个图形具有非常相似的模式，那么这两个位置可能靠得太近而无法正确区分它们。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ range .Locations }}
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <img src="/view/location_analysis/{{$.Family}}/{{.}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </div>
+    <!-- .content -->
+</div>
+<!-- /#right-panel -->
+{{ template "footer" . }}
